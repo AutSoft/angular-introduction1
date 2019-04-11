@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-my-first-component',
@@ -6,8 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-first-component.component.css']
 })
 export class MyFirstComponentComponent implements OnInit {
-  public message = 'this is my message';
-  public clickCounter = 0;
+  @Input() message = 'this is my message';
+  @Input() config: { color: string, isUpperCase: boolean };
+  clickCounter = 0;
   imageSrc = 'https://angular.io/assets/images/logos/angular/angular.png';
 
   constructor() { }

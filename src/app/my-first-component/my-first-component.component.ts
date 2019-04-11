@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-my-first-component',
@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class MyFirstComponentComponent implements OnInit {
   @Input() message = 'this is my message';
   @Input() config: { color: string, isUpperCase: boolean };
+  @Output() buttonClick = new EventEmitter<number>();
   clickCounter = 0;
   imageSrc = 'https://angular.io/assets/images/logos/angular/angular.png';
 
@@ -18,6 +19,7 @@ export class MyFirstComponentComponent implements OnInit {
 
   incrementCounter() {
     this.clickCounter++;
+    this.buttonClick.emit(this.clickCounter);
   }
 
 }

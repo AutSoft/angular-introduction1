@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-introduction1';
+  message = 'Keep clicking';
+  config = { color: 'red', isUpperCase: false };
+
+  buttonClicked(clickCounter: number) {
+    if (clickCounter > 10) {
+      this.message = 'Nice job';
+      this.config = { color: 'green', isUpperCase: true };
+    }
+  }
 }

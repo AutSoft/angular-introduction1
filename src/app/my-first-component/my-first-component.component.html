@@ -1,4 +1,4 @@
-{{message}}
+<div [ngStyle]="{color: config.color}">{{config.isUpperCase ? (message | uppercase) : message}}</div>
 <button (click)="incrementCounter()">Click me</button>
 {{clickCounter}}
 <img src="{{imageSrc}}">

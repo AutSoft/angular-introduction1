@@ -20,7 +20,7 @@ export class MyFirstComponentComponent implements OnInit, OnChanges, AfterViewIn
   @Input() message = 'this is my message';
   @Input() config: { color: string, isUpperCase: boolean };
   @Output() buttonClick = new EventEmitter<number>();
-  @ViewChild('btn') button: ElementRef<HTMLButtonElement>;
+  @ViewChild('btn', { static: true }) button: ElementRef<HTMLButtonElement>;
   clickCounter = 0;
   imageSrc = 'https://angular.io/assets/images/logos/angular/angular.png';
   changeDetectionCounter = 0;
